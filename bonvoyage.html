@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bon Voyage - Registration</title>
+  <style>
+    body {
+      background-image: url('travel.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      margin: 0;
+    }
+
+   #welcome-container {
+  text-align: center;
+  margin: 20px 0;
+  color: #000; /* Set the text color to black */
+  font-family: 'Georgia', serif; /* Choose a nice font, like Georgia */
+}
+
+    #registration-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border-radius: 5px; 
+    }
+
+    input:valid {
+      border: 2px solid #00cc00;
+    }
+
+    input:invalid {
+      border: 2px solid #ff6666;
+    }
+
+    #create-account {
+      color: #66c2ff;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    #create-account:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="welcome-container">
+    <h1>WELCOME TO BON VOYAGE TOURS</h1>
+  </div>
+
+  <div id="registration-container">
+    <h2>Create your account</h2>
+    <form action="#" onsubmit="return register();" id="registration-form">
+      <input type="text" id="Name" placeholder="Name" required>
+      <input type="number" id="age" placeholder="Age" required>
+      <input type="email" id="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+      <input type="password" id="password" placeholder="Password" pattern="^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[!@#$%^&(),.?\:{}|<>])(?=.[^\s]){8,}$" required>
+      <button type="submit">Register</button>
+    </form>
+    <br>
+    <a href="login.html" id="create-account">Already have an account? Login</a>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js"></script>
+
+  <!-- Your script must be loaded after the Firebase references -->
+  <script src=".\bonvoyage.js"></script>
+</body>
+</html>
